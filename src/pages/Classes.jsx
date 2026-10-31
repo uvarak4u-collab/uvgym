@@ -4,6 +4,7 @@ import { Flower2, Zap, Bike, Swords, Clock, User, Loader2, Check, CalendarX2, Ca
 import PageHeader from '../components/PageHeader'
 import GlassCard from '../components/GlassCard'
 import EmptyState from '../components/EmptyState'
+import Photo from '../components/Photo'
 import { useApp } from '../context/AppContext'
 import { useToast } from '../context/ToastContext'
 import { classTypes, classes, days } from '../data/mock'
@@ -56,6 +57,11 @@ function ClassCard({ c }) {
       whileHover={{ y: -4 }}
       className={`glass relative flex flex-col gap-4 overflow-hidden p-5 lg:flex-row lg:items-center ${booked ? 'ring-1 ring-lime/40' : ''}`}
     >
+      <Photo
+        name={c.type}
+        className="absolute inset-y-0 right-0 w-3/4 [mask-image:linear-gradient(to_right,transparent,black_75%)] lg:w-1/2"
+        imgClassName="opacity-50"
+      />
       {booked && <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-lime/[0.07] to-transparent" />}
 
       <div className="relative flex items-center gap-4 lg:w-28 lg:flex-col lg:items-start lg:gap-1">

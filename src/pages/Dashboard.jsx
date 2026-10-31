@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { Play, Flame, Timer, Zap, Dumbbell, CalendarDays, ChevronRight, CalendarX2, Target, CheckCircle2, Library, Layers } from 'lucide-react'
 import GlassCard from '../components/GlassCard'
+import Photo from '../components/Photo'
 import PageHeader from '../components/PageHeader'
 import ProgressRing from '../components/ProgressRing'
 import AnimatedCounter from '../components/AnimatedCounter'
@@ -106,6 +107,11 @@ function TodayCard({ workout, navigate }) {
 
   return (
     <GlassCard className="overflow-hidden lg:col-span-2" hover>
+      <Photo
+        name="today-workout"
+        className="absolute inset-y-0 right-0 w-full [mask-image:linear-gradient(to_right,transparent,black_75%)] sm:w-2/3"
+        imgClassName="opacity-50"
+      />
       <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-lime/20 blur-3xl" />
       <Dumbbell className="pointer-events-none absolute -bottom-8 right-4 h-40 w-40 -rotate-12 text-fg opacity-[0.04]" />
       <div className="relative">

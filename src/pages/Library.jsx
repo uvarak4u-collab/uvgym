@@ -5,6 +5,7 @@ import {
 } from 'lucide-react'
 import PageHeader from '../components/PageHeader'
 import EmptyState from '../components/EmptyState'
+import Photo from '../components/Photo'
 import ErrorState from '../components/ErrorState'
 import { Skeleton, SkeletonCard, LoadingLabel } from '../components/Skeleton'
 import { useApp } from '../context/AppContext'
@@ -44,6 +45,11 @@ function ExerciseCard({ ex, added, pending, locked, onToggle }) {
       whileHover={{ y: -5 }}
       className={`glass group relative flex flex-col overflow-hidden p-5 ${added ? 'ring-1 ring-lime/40' : ''}`}
     >
+      <Photo
+        name={ex.muscleGroup}
+        className="absolute inset-x-0 top-0 h-48 [mask-image:linear-gradient(to_bottom,black_15%,transparent_95%)]"
+        imgClassName="opacity-45"
+      />
       <div className={`pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b ${meta.tint}`} />
       <div className="relative flex items-start justify-between">
         <span className={`grid h-11 w-11 place-items-center rounded-2xl bg-surface/80 ring-1 ring-line/10 ${meta.text}`}>

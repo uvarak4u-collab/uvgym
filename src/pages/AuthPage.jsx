@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, Eye, EyeOff, Loader2, Mail, Lock, UserRound, Minus, Plus, Timer, Dumbbell, Flame, Trophy, AlertTriangle, CalendarCheck } from 'lucide-react'
 import Logo from '../components/Logo'
 import ThemeToggle from '../components/ThemeToggle'
+import Photo from '../components/Photo'
 import { useApp } from '../context/AppContext'
 import { useAuth } from '../context/AuthContext'
 import { useToast } from '../context/ToastContext'
@@ -85,7 +86,14 @@ export default function AuthPage({ mode }) {
   }
 
   return (
-    <div className="relative min-h-[100dvh] overflow-x-clip px-4 pb-10 sm:px-6">
+    <div className="relative isolate min-h-[100dvh] overflow-x-clip px-4 pb-10 sm:px-6">
+      <Photo
+        name="auth"
+        eager
+        className="absolute inset-0 -z-10"
+        imgClassName="object-[70%_40%]"
+        overlays={['bg-gradient-to-r from-bg via-bg/85 to-bg/30', 'bg-gradient-to-b from-bg/20 via-transparent to-bg']}
+      />
       <div className="grid-bg pointer-events-none absolute inset-x-0 top-0 h-[700px]" />
 
       <header className="relative mx-auto flex max-w-6xl items-center justify-between pt-[calc(env(safe-area-inset-top,0px)+16px)]">

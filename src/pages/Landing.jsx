@@ -8,6 +8,7 @@ import AnimatedCounter from '../components/AnimatedCounter'
 import ProgressRing from '../components/ProgressRing'
 import QuoteCard from '../components/QuoteCard'
 import Footer from '../components/Footer'
+import Photo from '../components/Photo'
 import { Skeleton } from '../components/Skeleton'
 import { useApp } from '../context/AppContext'
 import { useAuth, initialsOf } from '../context/AuthContext'
@@ -174,7 +175,14 @@ export default function Landing() {
   const startWorkout = () => navigate(user ? 'dashboard' : 'signup')
 
   return (
-    <div className="relative overflow-x-clip">
+    <div className="relative isolate overflow-x-clip">
+      <Photo
+        name="hero"
+        eager
+        className="absolute inset-x-0 top-0 -z-10 h-[1000px]"
+        imgClassName="object-[70%_30%]"
+        overlays={['bg-gradient-to-r from-bg via-bg/80 to-bg/30', 'bg-gradient-to-b from-bg/30 via-bg/40 to-bg']}
+      />
       <div className="grid-bg pointer-events-none absolute inset-x-0 top-0 h-[900px]" />
 
       {/* Navbar */}
@@ -332,6 +340,7 @@ export default function Landing() {
             viewport={{ once: true }}
             className="relative overflow-hidden rounded-3xl bg-brand p-8 text-[#06080a] sm:p-10"
           >
+            <Photo name="cta" imgClassName="opacity-25 grayscale mix-blend-multiply" />
             <div className="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-white/30 blur-3xl" />
             <Dumbbell className="absolute -bottom-6 right-6 h-36 w-36 -rotate-12 opacity-10" />
             <h2 className="relative text-3xl font-bold sm:text-4xl">Your next PR is one session away.</h2>

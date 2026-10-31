@@ -6,7 +6,7 @@
   "scripts": {
     "predev": "node scripts/ensure-env.js",
     "dev": "concurrently -k -n api,web -c cyan,green \"npm:dev:api\" \"npm:dev:web\"",
-    "dev:api": "node --watch server/dev.js",
+    "dev:api": "node --watch-path=api --watch-path=server server/dev.js",
     "dev:web": "vite",
     "db:setup": "node scripts/db-setup.js",
     "build": "vite build",
